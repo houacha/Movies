@@ -31,7 +31,6 @@ namespace MovieLibrary.Controllers
             {
                 return NotFound();
             }
-
             return Ok(movie);
         }
 
