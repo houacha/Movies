@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "4718dd7b-45df-4d4b-ad08-e6bd4511e142",
+		"name": "Movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44332/api/Movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44332/api/Movies",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44332",
+					"path": [
+						"api",
+						"Movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44332/api/Movies/7",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44332/api/Movies/7",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44332",
+					"path": [
+						"api",
+						"Movies",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44332/api/Movies/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Title\": \"Harry Potter And The Deathly Hollows Pt.1\",\r\n    \"Genre\": \"Fantasy\",\r\n    \"Director\": \"David Yates\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44332/api/Movies/",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44332",
+					"path": [
+						"api",
+						"Movies",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44332/api/Movies/7",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\": 7,\r\n    \"Title\": \"The Dark Knight\",\r\n    \"Genre\": \"Action\",\r\n    \"Director\": \"Christopher Nolan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44332/api/Movies/7",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44332",
+					"path": [
+						"api",
+						"Movies",
+						"7"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
