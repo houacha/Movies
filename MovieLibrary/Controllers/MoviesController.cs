@@ -16,13 +16,14 @@ namespace MovieLibrary.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: api/Movies1
+        // GET: api/Movies
         public IQueryable<Movie> GetMovies()
-        {            
+        {
             return db.Movies;
         }
 
-        // GET: api/Movies1/5
+        // GET: api/Movies/5
+        
         [ResponseType(typeof(Movie))]
         public IHttpActionResult GetMovie(int id)
         {
@@ -34,7 +35,8 @@ namespace MovieLibrary.Controllers
             return Ok(movie);
         }
 
-        // PUT: api/Movies1/5
+        // PUT: api/Movies/5
+        
         [ResponseType(typeof(void))]
         public IHttpActionResult PutMovie(int id, Movie movie)
         {
@@ -69,7 +71,8 @@ namespace MovieLibrary.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Movies1
+        // POST: api/Movies
+       
         [ResponseType(typeof(Movie))]
         public IHttpActionResult PostMovie(Movie movie)
         {
@@ -84,7 +87,8 @@ namespace MovieLibrary.Controllers
             return CreatedAtRoute("DefaultApi", new { id = movie.Id }, movie);
         }
 
-        // DELETE: api/Movies1/5
+        // DELETE: api/Movies/5
+       
         [ResponseType(typeof(Movie))]
         public IHttpActionResult DeleteMovie(int id)
         {
