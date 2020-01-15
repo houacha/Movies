@@ -39,8 +39,8 @@
 
             function (data, textStatus, jQxhr) {
                 $.each(data,
-
-                    function (i, value) {
+                    
+                    function (i,value) {
                         table.append('<tr><td>' + value.Title + '</td><td>' + value.Genre + '</td><td>' + value.Director + '</td></tr>');
                     })
             })
