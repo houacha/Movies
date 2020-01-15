@@ -25,7 +25,7 @@
 
             function (data, textStatus, jQxhr) {
                 table.append(
-                    
+
                     function (i, value) {
                         table.append('<tr><td>' + movie.Title + '</td><td>' + movie.Genre + '</td><td>' + movie.Director + '</td></tr>');
                     })
@@ -37,13 +37,13 @@
     function makeTable() {
         ajax('get', null,
 
-         function (data, textStatus, jQxhr) {
-            $.each(data, 
+            function (data, textStatus, jQxhr) {
+                $.each(data,
 
-                function (i, value) {
-                table.append('<tr><td>' + value.Title + '</td><td>' + value.Genre + '</td><td>' + value.Director + '</td></tr>');
+                    function (i, value) {
+                        table.append('<tr><td>' + value.Title + '</td><td>' + value.Genre + '</td><td>' + value.Director + '</td></tr>');
+                    })
             })
-        })
     }
     document.getElementById("movieTable").innerHTML = makeTable();
 
