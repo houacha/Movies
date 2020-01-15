@@ -1,49 +1,52 @@
-(function($){
-    function processForm( e ){
-        var movie = {
-        	Title : this["title"].value,
-            Genre : this["genre"].value,
-        	Director: this["director"].value
-        };
+(function ($) {
+    var table = $("#movieTable");
+
+    function ajax(type, info, htmlMethod) {
         $.ajax({
             url: 'https://localhost:44330/api/movies',
-            dataType: 'xml',
-            type: 'post',
+            dataType: 'json',
+            type: type,
             contentType: 'application/json',
-            data: JSON.stringify(movie),
-            success: function( data, textStatus, jQxhr ){
-                $('#response pre').html( data );
-            },
-            error: function( jqXhr, textStatus, errorThrown ){
-                console.log( errorThrown );
+            data: info,
+            success: htmlMethod,
+            error: function (jqXhr, textStatus, errorThrown) {
+                console.log(errorThrown);
             }
         });
-
-        e.preventDefault();
     }
 
-    $('#my-form').submit( processForm );
-(function ($) {
     function processForm(e) {
         var movie = {
             Title: this["title"].value,
             Genre: this["genre"].value,
             Director: this["director"].value
         };
-        $.ajax({
-            url: 'https://localhost:44332/api/Movies',
-            dataType: 'json',
-            type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify(movie),
-            success: function (data, textStatus, jQxhr) {
-                $('#response pre').html(data);
-            },
-            error: function (jqXhr, textStatus, errorThrown) {
-                console.log(errorThrown);
-            }
-        });
+        ajax('post', JSON.stringify(movie),
+
+            function (data, textStatus, jQxhr) {
+                table.append(
+                    
+                    function (i, value) {
+                        table.append('<tr><td>' + movie.Title + '</td><td>' + movie.Genre + '</td><td>' + movie.Director + '</td></tr>');
+                    })
+            });
         e.preventDefault();
     }
     $('#my-form').submit(processForm);
+
+    function makeTable() {
+        ajax('get', null,
+
+         function (data, textStatus, jQxhr) {
+            $.each(data, 
+
+                function (i, value) {
+                table.append('<tr><td>' + value.Title + '</td><td>' + value.Genre + '</td><td>' + value.Director + '</td></tr>');
+            })
+        })
+    }
+    document.getElementById("movieTable").innerHTML = makeTable();
+
+
+
 })(jQuery);
