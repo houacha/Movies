@@ -8,30 +8,31 @@
 
 <body>
 
-    <div id="response">
-        <pre></pre>
-    </div>
+    <h1 align="center">Movie Library</h1>
 
-    <form id="my-form">
+    <h4 align="center">Add A Movie</h4>
+    <form id="my-form" class="form" align="middle">
         <input type="text" name="title" placeholder="Title" />
         <input type="text" name="genre" placeholder="Genre" />
         <input type="text" name="director" placeholder="Director" />
-
         <button type="submit">Submit</button>
     </form>
 <br>
-<br>
-    <table >
+
+<form id="movieForm">
+    <h4>Make Changes To Table</h4>
+    <button type="button" onclick="edit()">Save Changes</button>
+    <br>
+    <br>
+    <table>
         <tr>
             <th>Title</th>
             <th>Genre</th>
             <th>Director</th>
         </tr>
-        <tbody id="movieTable">
-            
-        </tbody>
+        <tbody id="movieTable"></tbody>
     </table>
-
+</form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript" src="MovieLibrary.js"></script>
 </body>
